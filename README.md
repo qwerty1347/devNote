@@ -2,7 +2,7 @@
 tags:
   - index
   - moc
-updated: 2026-07-07
+updated: 2026-09-21
 ---
 
 # dev-notes
@@ -16,7 +16,7 @@ updated: 2026-07-07
 | --- | --- | --- | --- |
 | `DevLog/` | 시간 | 날짜별 개발 로그·트러블슈팅 (`YYYY-MM-DD 제목.md`) | 인시던트, 삽질 기록, 결정 로그 |
 | `Web/` | 주제 | 웹/API 앱 런타임 (FastAPI: 요청·응답, 업로드, 폼, Pydantic, uvicorn) | Django/Flask, 미들웨어, 인증 라우팅 |
-| `Database/` | 주제 | ORM/ODM 쿼리·모델링 (SQLAlchemy, MongoDB) | Alembic 마이그레이션, 인덱싱, Redis 캐시 |
+| `Database/` | 주제 | ORM/ODM 쿼리·모델링·인덱스 (SQLAlchemy, MongoDB, Elasticsearch) | Alembic 마이그레이션, 실행계획 튜닝, Redis 캐시 |
 | `Async/` | 주제 | 비동기 작업 큐·백그라운드 잡 | Celery/arq 운영, 스케줄, SAQ |
 | `Infra/` | 주제 | 컨테이너·빌드·배포·로컬 개발환경 | Dockerfile 패턴, compose, CI, nginx |
 | `Security/` | 주제 | 인증·봇 차단·시크릿 | JWT/OAuth, CORS, CSRF, rate limiting |
@@ -45,6 +45,9 @@ updated: 2026-07-07
 - [[간단한 CRUD 예제 (라우터+Repository)]] — 라우터 + Repository 계층 CRUD
 - [[관계(조인) CRUD 예제]] — 2개 테이블 조인·다컬럼 CRUD
 - [[Elasticsearch 쿼리 가이드 (auth_apikey)]] — 매핑·Query DSL·PHP 클라이언트 사용 정리
+- [[클러스터 인덱스 vs 비클러스터 인덱스]] — 인덱스 구조 차이, 커버링 인덱스, PK 설계 영향
+- [[인덱스가 많으면 쓰기가 느려지는 이유]] — 인덱스 개수가 INSERT/UPDATE에 물리는 비용, 안 쓰는 인덱스 찾기
+- [[복합 인덱스 컬럼 순서 정하기]] — 왼쪽 접두사 규칙, 등치/범위/정렬·카디널리티 우선순위
 
 ### Async
 - [[Celery vs arq]] — Redis 기반 큐 구성·사용법 비교
